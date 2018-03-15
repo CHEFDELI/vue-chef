@@ -12,6 +12,30 @@ i{
   }
 }
 
+.quote{
+  position: relative;
+  color: #888888 !important;
+  &:before{
+    content: "chat_bubble ";
+    font-family: 'Material Icons';
+    position: relative;
+    top: 3px;
+    font-size: 1.2em;
+    vertical-align: top;
+    @media screen and (max-width: $break-medium){
+      content: "chat_bubble \A";
+      white-space: pre;
+      left: 0;
+    }
+  }
+}
+
+.small{
+  font-weight: 100;
+  color: #555555 !important;
+  font-size: 0.8em;
+}
+
 .shadow{
   box-shadow: 0px 0px 3px #757575;
 }
@@ -44,6 +68,14 @@ i{
 
 .col-3-10{
   width: 30%;
+}
+
+.col-1-4{
+  width: 25%;
+}
+
+.col-3-4{
+  width: 75%;
 }
 
 .col-1-2{

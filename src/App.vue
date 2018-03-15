@@ -14,12 +14,13 @@
         span(@click="toggleDropdown"): li.dropdown More
 
       div(:class="{visible: dropdown}").menu
-        p(@click="closeDropdown") Profile
+        router-link(to='/user'): p(@click="closeDropdown") Profile
         router-link(to='/shop'): p(@click="closeDropdown") Chef
         hr
         p(@click="" v-if="loginStatus === true") Logout
         p(@click="openLoginForm" v-else) Login
-      router-view
+
+    router-view
       
 </template>
 
