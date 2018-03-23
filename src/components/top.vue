@@ -8,7 +8,7 @@
             img(src='https://placehold.jp/240x150.png')
           .description.col-6-10
             img.profile-img(src='https://placehold.jp/64x64.png')
-            h2 Xeonia Pantheon
+            h2.publisher-name(:data-balloon="publisherName" data-balloon-pos="up") {{username}}
             span Restaurant de grand skyfall
             p
               | 落ち着ける雰囲気でデートや一対一のお食事にとても適していると思います。
@@ -18,13 +18,16 @@
               br
               br
               | とてもおすすめします。
+              
+          a.instagram-url(:href="articleURL")
+            img(src="../images/instagram.svg")
         .article
           .images.col-4-10
             img(src='https://placehold.jp/240x150.png')
             img(src='https://placehold.jp/240x150.png')
           .description.col-6-10
             img.profile-img(src='https://placehold.jp/64x64.png')
-            h2 Xeonia Pantheon
+            h2.publisher-name(:data-balloon="publisherName" data-balloon-pos="up") {{username}}
             span Restaurant de grand skyfall
             p
               | 落ち着ける雰囲気でデートや一対一のお食事にとても適していると思います。
@@ -34,13 +37,15 @@
               br
               br
               | とてもおすすめします。
+          a.instagram-url(:href="articleURL")
+            img(src="../images/instagram.svg")
         .article
           .images.col-4-10
             img(src='https://placehold.jp/240x150.png')
             img(src='https://placehold.jp/240x150.png')
           .description.col-6-10
             img.profile-img(src='https://placehold.jp/64x64.png')
-            h2 Xeonia Pantheon
+            h2.publisher-name(:data-balloon="publisherName" data-balloon-pos="up") {{username}}
             span Restaurant de grand skyfall
             p
               | 落ち着ける雰囲気でデートや一対一のお食事にとても適していると思います。
@@ -50,13 +55,15 @@
               br
               br
               | とてもおすすめします。
+          a.instagram-url(:href="articleURL")
+            img(src="../images/instagram.svg")
         .article
           .images.col-4-10
             img(src='https://placehold.jp/240x150.png')
             img(src='https://placehold.jp/240x150.png')
           .description.col-6-10
             img.profile-img(src='https://placehold.jp/64x64.png')
-            h2 Xeonia Pantheon
+            h2.publisher-name(:data-balloon="publisherName" data-balloon-pos="up") {{username}}
             span Restaurant de grand skyfall
             p
               | 落ち着ける雰囲気でデートや一対一のお食事にとても適していると思います。
@@ -66,6 +73,8 @@
               br
               br
               | とてもおすすめします。
+          a.instagram-url(:href="articleURL")
+            img(src="../images/instagram.svg")
       .sidebar.col-3-10
         .user-profile
           img.profile-img(src='https://placehold.jp/64x64.png')
@@ -103,7 +112,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      username: "Xeonia Pantheon",
+      publisherName: "poo" ,
+      articleURL: "https://instagram.com/#"
     }
   }
 }
@@ -150,11 +161,24 @@ main{
     }
 
     .article{
+      position: relative;
       box-shadow: 0px 5px 7px rgba(117, 117, 117, 0.26);
       box-sizing: border-box;
       margin-bottom: 40px;
       padding: 20px;
+      padding-bottom: 50px;
       width: 100%;
+      
+      .instagram-url{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        img{
+          height: 30px;
+          width: 30px;
+          object-fit: contain;
+        }
+      }
 
       @media screen and (max-width: $break-medium){
         .images{
@@ -202,7 +226,7 @@ main{
           width: 64px;
           object-fit: cover;
         }
-
+        
         h2{
           position: relative;
           display: inline-block;
@@ -212,6 +236,10 @@ main{
           font-size: 1.4em;
           margin: 0;
           line-height: 64px;
+        }
+        
+        .publisher-name{
+          @extends h2;
         }
 
         span{

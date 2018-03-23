@@ -3,6 +3,12 @@ i{
   font-family: 'Material Icons';
 }
 
+.instagram-logo{
+  height: 1.2em;
+  object-fit: contain;
+  object-position: center;
+}
+
 .dropdown{
   &:after{
     display: inline-block;

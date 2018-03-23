@@ -61,6 +61,7 @@ export default {
 /* eslint-disable */
 @import "partial/components";
 @import "partial/option";
+@import "partial/baloon";
 
 body{
   margin: 0;
