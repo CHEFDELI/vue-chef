@@ -1,6 +1,10 @@
 <template lang="pug">
-
   div#app
+    div.error
+      h2 アクセス過剰
+      p サーバーに大きな負荷がかかっているため、サービスを一時停止しています。
+      p 申し訳ございません。
+
     header.shadow
       div.logo-wrapper
         img(src="./images/chefdeli-logo.svg")
@@ -227,5 +231,60 @@ header{
       } 
     }
   }
+}
+
+.error{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  padding: 1em;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 200px;
+  background-color: #ffdcdc;
+  box-shadow: 1px 1px 5px #cccccc;
+  z-index: 100;
+  border-radius: 8px;
+  border: solid 2px #ffbebe;
+  color: #212121;
+  animation: blinkBorder 2s ease-in-out infinite;
+  
+  @media screen and (max-width: $break-small){
+    width: 350px;
+  }
+  
+  &:before{
+    content: "warning";
+    font-family: "Material icons";
+    padding: 5px;
+    font-size: 2em;
+    color: #212121;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0 0 5px 0;
+    background-color: #ffbebe;
+    animation: blink 2s ease-in-out infinite;
+  }
+  
+  h2{
+    text-align: center;
+    
+    font-size: 1.4em;
+    margin: 0 auto;
+  }
+}
+  
+@keyframes blinkBorder{
+  0%{border-color: #ffbebe}
+  50%{border-color: #ff7575}
+  100%{border-color: #ffbebe}
+}
+  
+@keyframes blink{
+  0%{background-color: #ffbebe}
+  50%{background-color: #ff7575}
+  100%{background-color: #ffbebe}
 }
 </style>
